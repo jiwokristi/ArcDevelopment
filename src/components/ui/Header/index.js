@@ -36,7 +36,12 @@ const ElevationScroll = ({ children }) => {
   });
 };
 
-export default function Header(props) {
+export default function Header({
+  value,
+  setValue,
+  selectedIndex,
+  setSelectedIndex,
+}) {
   const classes = useStyles();
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("md"));
@@ -44,11 +49,9 @@ export default function Header(props) {
     typeof navigator !== "undefined" &&
     /iPad|iPhone|iPod/.test(navigator.userAgent);
 
-  const [value, setValue] = useState(0);
   const [anchorEl, setAnchorEl] = useState(null);
   const [openMenu, setOpenMenu] = useState(false);
   const [openDrawer, setOpenDrawer] = useState(false);
-  const [selectedIndex, setSelectedIndex] = useState(0);
 
   const handleChange = (e, newValue) => {
     setValue(newValue); // MUI sends the value of each Tab from the Tabs component, the default of each Tab's value will be its index
@@ -154,7 +157,14 @@ export default function Header(props) {
           break;
       }
     });
-  }, [value, menuOptions, tabOptions, selectedIndex]);
+  }, [
+    value,
+    setValue,
+    menuOptions,
+    tabOptions,
+    selectedIndex,
+    setSelectedIndex,
+  ]);
 
   const tabs = (
     <Fragment>
