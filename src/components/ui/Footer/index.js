@@ -29,7 +29,7 @@ export default function Footer({ setValue, setSelectedIndex }) {
       selectedIndex: 1,
     },
     {
-      name: "Mobile App Development",
+      name: "iOS/Android App Development",
       link: "/services",
       activeIndex: 1,
       selectedIndex: 2,
@@ -70,7 +70,11 @@ export default function Footer({ setValue, setSelectedIndex }) {
     <footer className={classes.footerStyle}>
       {/* mdDown prop hides all the content inside of the Hidden component at the medium and below breakpoints*/}
       <Hidden mdDown>
-        <Grid container justify="center" className={classes.mainContainer}>
+        <Grid
+          container
+          justifyContent="center"
+          className={classes.mainContainer}
+        >
           <Grid item className={classes.gridItem}>
             <Grid container spacing={2} direction="column">
               <Grid
@@ -124,6 +128,7 @@ export default function Footer({ setValue, setSelectedIndex }) {
               {aboutRoutes.map((route) => (
                 <Grid
                   item
+                  key={route}
                   component={Link}
                   to="/about"
                   className={classes.link}
@@ -152,7 +157,7 @@ export default function Footer({ setValue, setSelectedIndex }) {
       <FooterAdornment className={classes.adornment} />
       <Grid
         container
-        justify="flex-end"
+        justifyContent="flex-end"
         spacing={2}
         className={classes.socialContainer}
       >
