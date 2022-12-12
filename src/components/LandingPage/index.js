@@ -7,6 +7,8 @@ import {
   Grid,
   Button,
   Typography,
+  Card,
+  CardContent,
 } from "@material-ui/core";
 
 import ButtonArrow from "components/ui/ButtonArrow";
@@ -179,6 +181,49 @@ export default function LandingPage() {
           <Grid item>
             <WebsiteIcon className={classes.icon} />
           </Grid>
+        </Grid>
+      </Grid>
+      <Grid item>
+        <Grid
+          container
+          alignItems="center"
+          justifyContent="center"
+          style={{ height: "100em", marginTop: "12em" }}
+        >
+          <Card className={classes.revolutionCard}>
+            <CardContent>
+              <Grid
+                container
+                direction="column"
+                style={{ textAlign: "center" }}
+              >
+                <Grid item>
+                  <Typography variant="h3" gutterBottom>
+                    The Revolution
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  <Typography variant="subtitle1">
+                    Visionary insights coupled with cutting edge technology is a
+                    recipe for revolution.
+                  </Typography>
+                  <Button
+                    variant="outlined"
+                    className={classes.learnButtonHero}
+                  >
+                    <span style={{ marginRight: 10 }}>Learn More</span>
+                    <ButtonArrow
+                      width={15}
+                      height={15}
+                      fill={theme.palette.common.blue}
+                    />
+                  </Button>
+                </Grid>
+              </Grid>
+            </CardContent>
+          </Card>
+
+          <div className={classes.revolutionBackground} />
         </Grid>
       </Grid>
     </Grid>

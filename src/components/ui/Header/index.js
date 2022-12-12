@@ -22,8 +22,8 @@ import {
 import MenuIcon from "@material-ui/icons/Menu";
 
 // ? the style is ruined
-// import { ReactComponent as Logo } from "assets/logo.svg";
-import logo from "assets/logo.svg";
+import { ReactComponent as Logo } from "assets/logo.svg";
+// import logo from "assets/logo.svg";
 
 import { useStyles } from "./style";
 
@@ -308,8 +308,8 @@ export default function Header({
               className={classes.logoContainer}
               onClick={() => setValue(0)}
             >
-              {/* <Logo className={classes.logo} /> */}
-              <img src={logo} alt="company logo" className={classes.logo} />
+              <Logo className={classes.logo} />
+              {/* <img src={logo} alt="company logo" className={classes.logo} /> */}
             </Button>
             {matches ? drawer : tabs}
           </Toolbar>

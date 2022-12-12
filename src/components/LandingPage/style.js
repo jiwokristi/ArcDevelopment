@@ -1,5 +1,7 @@
 import { makeStyles } from "@material-ui/core";
 
+import revolutionBackground from "assets/repeatingBackground.svg";
+
 export const useStyles = makeStyles((theme) => ({
   animation: {
     minWidth: "50em",
@@ -73,5 +75,27 @@ export const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       padding: 25,
     }, // we use this padding to prevent the Typography from touching the edges of the page before it jumps into the extra small break point's style
+  },
+  revolutionBackground: {
+    backgroundImage: `url(${revolutionBackground})`,
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    height: "100%",
+    width: "100%",
+    backgroundRepeat: "no-repeat",
+  },
+  revolutionCard: {
+    position: "absolute",
+    boxShadow: theme.shadows[10],
+    borderRadius: 15,
+    padding: "10em",
+    [theme.breakpoints.down("sm")]: {
+      paddingTop: "8em",
+      paddingBottom: "8em",
+      paddingLeft: 0,
+      paddingRight: 0,
+      borderRadius: 0,
+      width: "100%",
+    },
   },
 }));
