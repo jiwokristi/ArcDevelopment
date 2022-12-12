@@ -1,6 +1,7 @@
 import { makeStyles } from "@material-ui/core";
 
 import revolutionBackground from "assets/repeatingBackground.svg";
+import informationBackground from "assets/infoBackground.svg";
 
 export const useStyles = makeStyles((theme) => ({
   animation: {
@@ -97,5 +98,13 @@ export const useStyles = makeStyles((theme) => ({
       borderRadius: 0,
       width: "100%",
     },
+  },
+  informationBackground: {
+    backgroundImage: `url(${informationBackground})`,
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    height: "100%",
+    width: "100%",
+    backgroundRepeat: "no-repeat",
   },
 }));

@@ -25,6 +25,7 @@ export default function LandingPage() {
   const classes = useStyles();
   const theme = useTheme();
   const matchesSm = useMediaQuery(theme.breakpoints.down("sm"));
+  const matchesXs = useMediaQuery(theme.breakpoints.down("xs"));
   //* instructor's notes:
   // for styling, use className with breakpoints, but for prop values, useMediaQuery. So if I need to change the 'direction' prop on a Grid component from 'row' to 'column' at the 'sm' breakpoint, then I'd use useMediaQuery to pass that into the 'direction' prop.
 
@@ -183,6 +184,8 @@ export default function LandingPage() {
           </Grid>
         </Grid>
       </Grid>
+
+      {/* -----The Revolution Block----- */}
       <Grid item>
         <Grid
           container
@@ -224,6 +227,78 @@ export default function LandingPage() {
           </Card>
 
           <div className={classes.revolutionBackground} />
+        </Grid>
+      </Grid>
+
+      {/* -----Information Block----- */}
+      <Grid item>
+        <Grid container alignItems="center" style={{ height: "80em" }}>
+          <Grid
+            item
+            container
+            style={{
+              position: "absolute",
+              textAlign: matchesXs ? "center" : "inherit",
+            }}
+            direction={matchesXs ? "column" : "row"}
+            spacing={matchesXs ? 10 : 0}
+          >
+            <Grid
+              item
+              style={{ marginLeft: matchesXs ? 0 : matchesSm ? "2em" : "5em" }}
+              sm
+            >
+              <Grid container direction="column">
+                <Typography variant="h2" style={{ color: "white" }}>
+                  About Us
+                </Typography>
+                <Typography variant="subtitle2">Let's get personal.</Typography>
+                <Grid item>
+                  <Button
+                    variant="outlined"
+                    className={classes.learnButton}
+                    style={{ color: "white", borderColor: "white" }}
+                  >
+                    <span style={{ marginRight: 10 }}>Learn More</span>
+                    <ButtonArrow width={10} height={10} fill="white" />
+                  </Button>
+                </Grid>
+              </Grid>
+            </Grid>
+
+            <Grid
+              item
+              style={{
+                marginRight: matchesXs ? 0 : matchesSm ? "2em" : "5em",
+                textAlign: matchesXs ? "center" : "right",
+              }}
+              sm
+            >
+              <Grid container direction="column">
+                <Typography variant="h2" style={{ color: "white" }}>
+                  Contact Us
+                </Typography>
+                <Typography variant="subtitle2">
+                  Say hello!{" "}
+                  <span role="img" aria-label="waving hand">
+                    👋
+                  </span>
+                </Typography>
+                <Grid item>
+                  <Button
+                    variant="outlined"
+                    className={classes.learnButton}
+                    style={{ color: "white", borderColor: "white" }}
+                  >
+                    <span style={{ marginRight: 10 }}>Learn More</span>
+                    <ButtonArrow width={10} height={10} fill="white" />
+                  </Button>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
+
+          <div className={classes.informationBackground} />
         </Grid>
       </Grid>
     </Grid>
